@@ -20,11 +20,19 @@ class MovieContainer extends Component {
 			movies: [...this.state.movies, movie]
 		});	
 	}
+
+	removeMovie = (e) => {
+    	console.log(e.currentTarget.id);
+    	const id = e.currentTarget.id
+    	// e.preventDefault()
+    	console.log("this is happening");
+    	this.setState({movies: this.state.movies.filter((movie, i) => i != id)})
+  	}
 	render() {
 		return (
 			<div>
 				<span>Hi {this.props.username} </span>
-				<MovieList movies={this.state.movies}/>
+				<MovieList movies={this.state.movies} removeMovie={this.removeMovie}/>
 				<CreateMovie addMovie={this.addMovie}/>
 			</div>
 			)
@@ -32,3 +40,8 @@ class MovieContainer extends Component {
 }
 
 export default MovieContainer;
+
+// TO DELETE MOVIES
+// create a button on the list 
+// that button should be able to detect which thing it is and remove it from this.state.movies array
+// look at crimes list for practice
