@@ -9,12 +9,6 @@ class MovieList extends Component {
 		}
 	}
 
-	toggleEditModal = (i) => {
-  		this.setState({
-  			isOpen: !this.state.isOpen
-  		});
-  		console.log(i);
-  	}
 
 	render() {
 		console.log(this.props, "this is props");
@@ -32,11 +26,7 @@ class MovieList extends Component {
 				<ul>
 					{movieList}
 				</ul>
-				<Modal show={this.state.isOpen} onClose={this.toggleEditModal}> <h3>Edit Movie</h3>
-					<form>
-						<input type="text" />
-					</form>
-				</Modal>
+
 			</div>
 			)
 	}
@@ -44,3 +34,20 @@ class MovieList extends Component {
 }
 
 export default MovieList;
+
+
+// EXTRA SHIT: 
+
+
+	// toggleEditModal = (i) => {
+ //  		this.setState({
+ //  			isOpen: !this.state.isOpen
+ //  		});
+ //  		console.log(i);
+ //  	}
+
+ 			// 	<Modal show={this.state.isOpen} onClose={this.toggleEditModal}> <h3>Edit Movie</h3>
+				// 	<form>
+				// 		<input type="text" />
+				// 	</form>
+				// </Modal>
