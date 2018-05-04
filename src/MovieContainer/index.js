@@ -31,8 +31,15 @@ class MovieContainer extends Component {
     	this.setState({movies: this.state.movies.filter((movie, i) => i != id)})
   	}
 
-  	closeEdit = () => {
-  		
+  	closeEdit = (movie) => {
+  		const index = this.state.movies.indexOf(this.state.editedMovie); // indexOf returns the position of an object in an array
+  		const movies = this.state.movies;
+  		movies[index] = movie
+
+  		this.setState({
+  			showEdit: false,
+  			movies: movies
+  		})
   	}
 
   	editMovie = (e) => {

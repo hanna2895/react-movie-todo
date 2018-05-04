@@ -3,6 +3,9 @@ import './style.css'
 
 // props are immutable, so you can't type anything into the edit field. we need to change it to a class.
 
+// use arrow functions to automatically bind 'this' to the component
+// not necessary for pre-defined functions like render, componentWillReceiveProps, etc. 
+
 class Modal extends Component {
 	constructor(props) { // you can pass props to the constructor if you want to access them inside this function
 							// the constructor function only gets called one time in the lifetime of the component

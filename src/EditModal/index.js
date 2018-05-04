@@ -1,4 +1,5 @@
 // THIS IS THE ONE THAT I MADE BASED ON YOUTUBE TUTORIALS
+// this code is no longer active, not depeting just in case
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
