@@ -33,7 +33,7 @@ class Modal extends Component {
 		return (
 			<div className={cssClass}>
 				<input type="text" value={this.state.inputVal} onChange={this.handleInput}/>
-				<button> Edit </button>
+				<button onClick={this.props.closeEdit.bind(null, this.state.inputVal)}> Edit </button>
 			</div>
 		)
 	}

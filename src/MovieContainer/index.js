@@ -57,7 +57,7 @@ class MovieContainer extends Component {
 				<span>Hi {this.props.username} </span>
 				<MovieList movies={this.state.movies} removeMovie={this.removeMovie} editMovie={this.editMovie}/>
 				<CreateMovie addMovie={this.addMovie}/>
-				<Modal showEdit={this.state.showEdit} editedMovie={this.state.editedMovie}/>
+				<Modal showEdit={this.state.showEdit} editedMovie={this.state.editedMovie} closeEdit={this.closeEdit}/>
 			</div>
 			)
 	}
