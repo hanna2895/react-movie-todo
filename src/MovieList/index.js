@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import Modal from "../EditModal"
 
+// this doesn't actually need to be a class now that the modal is structured differently. can refactor to be a functional component. 
+
+
+
 class MovieList extends Component {
 	constructor() {
 		super();
-		this.state = {
-			isOpen: false
-		}
+		// this.state = { THIS ISN'T ACTUALLY NECESSARY
+		// 	isOpen: false
+		// }
 	}
 
 
