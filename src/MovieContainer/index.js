@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MovieList from "../MovieList"
 import CreateMovie from '../CreateMovie'
+// import Modal from '../EditModal' <-- this is the one I tried to make on myown
+import Modal from '../ClassModal'
 
 class MovieContainer extends Component {
 	constructor() {
@@ -17,15 +19,13 @@ class MovieContainer extends Component {
 		console.log(e.currentTarget);
 		console.log(e.target);
 		this.setState({
-			movies: [...this.state.movies, movie]
+			movies: [...this.state.movies, movie],
 		});	
 	}
 
 	removeMovie = (e) => {
-    	console.log(e.currentTarget.id);
     	const id = e.currentTarget.id
     	// e.preventDefault()
-    	console.log("this is happening");
     	this.setState({movies: this.state.movies.filter((movie, i) => i != id)})
   	}
 	render() {
@@ -41,7 +41,6 @@ class MovieContainer extends Component {
 
 export default MovieContainer;
 
-// TO DELETE MOVIES
-// create a button on the list 
-// that button should be able to detect which thing it is and remove it from this.state.movies array
-// look at crimes list for practice
+// to edit movies
+// create a modal that pops up when you click edit movie
+// that modal should have an input field, when you click ok on that modal, that stuff should get stored in the page's state and then updated
