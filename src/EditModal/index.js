@@ -1,3 +1,5 @@
+// THIS IS THE ONE THAT I MADE BASED ON YOUTUBE TUTORIALS
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 

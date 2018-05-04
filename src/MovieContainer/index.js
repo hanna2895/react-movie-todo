@@ -8,7 +8,9 @@ class MovieContainer extends Component {
 	constructor() {
 		super();
 		this.state = {
-			movies: ['Forrest Gump', 'Dogma', 'Toy Story', "Lion King"]
+			movies: ['Forrest Gump', 'Dogma', 'Toy Story', "Lion King"],
+			showEdit: false, // this piece of state will toggle the edit modal
+			editedMovie: ''
 		}
 	}
 
@@ -28,12 +30,27 @@ class MovieContainer extends Component {
     	// e.preventDefault()
     	this.setState({movies: this.state.movies.filter((movie, i) => i != id)})
   	}
+
+  	closeEdit = () => {
+  		
+  	}
+
+  	editMovie = (e) => {
+  		const id = e.currentTarget.previousSibling.id;
+  		console.log(id);
+  		this.setState({
+  			showEdit: true,
+  			editedMovie: this.state.movies[id] // get the movie that you clicked in order to be able to display it in the modal
+  		})
+  	}
+
 	render() {
 		return (
 			<div>
 				<span>Hi {this.props.username} </span>
-				<MovieList movies={this.state.movies} removeMovie={this.removeMovie}/>
+				<MovieList movies={this.state.movies} removeMovie={this.removeMovie} editMovie={this.editMovie}/>
 				<CreateMovie addMovie={this.addMovie}/>
+				<Modal showEdit={this.state.showEdit} editedMovie={this.state.editedMovie}/>
 			</div>
 			)
 	}

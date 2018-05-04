@@ -19,7 +19,11 @@ class MovieList extends Component {
 	render() {
 		console.log(this.props, "this is props");
 		const movieList = this.props.movies.map((movie, i) => {
-			return <li key={i}>{movie}<button id={i} onClick={this.props.removeMovie} >Delete this Movie</button><button id={i} onClick={this.toggleEditModal.bind(this, i)}>Edit this Movie</button></li>	
+			return (
+				<li key={i}>{movie}
+				<button id={i} onClick={this.props.removeMovie} >Delete this Movie</button>
+				<button onClick={this.props.editMovie}>Edit this Movie</button>
+			</li>	)
 		})
 		console.log(movieList, "this is movieList");
 		
